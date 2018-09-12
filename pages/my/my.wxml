@@ -1,0 +1,127 @@
+<!--pages/my/my.wxml-->
+<view class='content'>
+  <view class='header {{shop}}'>
+    <view class='avtarWrap'>
+      <image class='avatar' src='{{avatar}}'></image>
+    </view>
+    <view class='nickName '>{{nickname}}</view>
+    <!-- <view class='wxNum'>微信号:3767441759</view> -->
+  </view>
+  <view class='couponContent'>
+    <view class='title {{shop}} {{shopstate}}'>{{shop === ''?'我的优惠券':'销售记录'}}
+        <text style="display:{{shop === ''?'none':'inline-block'}}" class='saleNum'>({{saleNum}})条</text>
+    </view>
+   
+    <!-- 用户的优惠券 -->
+    <view wx:if="{{shopor}}" class='mycoupon'>
+      <view class="swiper-tab" style='display:{{coupon}};'>
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">全部</view>
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">未使用</view>
+        <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">已使用</view>
+        <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">已过期</view>
+      </view>
+      <swiper  style='display:{{havecoupon}};' current="{{currentTab}}" duration="300" bindchange="swiperTab">
+        <!-- 全部 -->
+        <swiper-item class="swiperItem" > 
+            <view class='sigleCoupon' bindtap='Tocoupondetail' wx:for="{{allCoupon}}" wx:key="index" data-id="{{item.serialno}}" data-state="{{item.state}}" data-starttime="{{item.starttime}}" data-endtime="{{item.endtime}}" data-preferentialamount="{{item.preferentialamount}}" data-consumptionamount="{{item.consumptionamount}}" data-state="{{item.state}}">
+              <view class='left'>
+                <view class='valuePrice'>{{item.preferentialamount}}</view>
+                <view class='limit'>满{{item.consumptionamount}}使用</view>
+              </view>
+              <view class='right'>
+                <view class='intro'>满减优惠券</view>
+                <view class='limitIntro'>使用范围：指定适用商家</view>
+                <view wx:if="{{!item.consumetime}}" class='limitDate'>有效期：{{item.starttime}}至{{item.endtime}}</view>
+                <view wx:else class='limitDate'>消费时间：{{item.consumetime}}</view>
+                <!-- 如果是未使用则不显示，如果是其他状态则根据状态进行显示 -->
+                <image style="display:{{item.state == 1 || item.state == 4?'none':'block'}}"  class='usedIcon' src="{{item.state == 2?'../../images/usedIcon.png':'../../images/overdueIcon.png'}}" ></image>
+              </view>
+            </view>
+        </swiper-item >
+        <!-- 未使用 -->
+        <swiper-item class="swiperItem" >
+          <view class='sigleCoupon' bindtap='Tocoupondetail' wx:for="{{notuseCoupon}}" wx:key="index" data-id="{{item.serialno}}" data-state="{{item.state}}" data-starttime="{{item.starttime}}" data-endtime="{{item.endtime}}" data-preferentialamount="{{item.preferentialamount}}" data-consumptionamount="{{item.consumptionamount}}" data-state="{{item.state}}">
+              <view class='left'>
+                <view class='valuePrice'>{{item.preferentialamount}}</view>
+                <view class='limit'>满{{item.consumptionamount}}使用</view>
+              </view>
+              <view class='right'>
+                <view class='intro'> 满减优惠券</view>
+                <view class='limitIntro'>使用范围：指定适用商家</view>
+                <view wx:if="{{item.consumetime == null}}" class='limitDate'>有效期：{{item.starttime}}至{{item.endtime}}</view>
+                <view wx:else class='limitDate'>消费时间：{{item.consumetime}}</view>
+              </view>
+            </view>
+        </swiper-item>
+        <!-- 已使用 -->
+        <swiper-item class="swiperItem">
+          <view class='sigleCoupon' wx:for="{{usedCoupon}}" wx:key="index">
+              <view class='left'>
+                <view class='valuePrice'>{{item.preferentialamount}}</view>
+                <view class='limit'>满{{item.consumptionamount}}使用</view>
+              </view>
+              <view class='right'>
+                <view class='intro'>满减优惠券</view>
+                <view class='limitIntro'>使用范围：指定适用商家</view>
+                <view wx:if="{{item.consumetime == null}}" class='limitDate'>有效期：{{item.starttime}}至{{item.endtime}}</view>
+                <view wx:else class='limitDate'>消费时间：{{item.consumetime}}</view>
+                <image  class='usedIcon' src='../../images/usedIcon.png' ></image>
+              </view>
+            </view>
+        </swiper-item>
+        <!-- 已过期 -->
+        <swiper-item class="swiperItem" wx:for="{{overdueCoupon}}" wx:key="index">
+         <view class='sigleCoupon'>
+              <view class='left'>
+                <view class='valuePrice'>{{item.preferentialamount}}</view>
+                <view class='limit'>满{{item.consumptionamount}}使用</view>
+              </view>
+              <view class='right'>
+                <view class='intro'>满减优惠券</view>
+                <view class='limitIntro'>使用范围：指定适用商家</view>
+                <view wx:if="{{item.consumetime == null}}" class='limitDate'>有效期：{{item.starttime}}至{{item.endtime}}</view>
+                <view wx:else class='limitDate'>消费时间：{{item.consumetime}}</view>
+                <image  class='overdueIcon' src='../../images/overdueIcon.png' ></image>
+              </view>
+            </view>
+        </swiper-item>
+      </swiper>
+      <view class='nocoupon' style='display:{{nonecoupon}}'>
+        <image class='nocouponIcon' src='../../images/nocouponIcon.png'></image>
+        <text>亲，您暂时没有优惠券哦</text>
+      </view>
+    </view>
+    <!-- 卖家的销售记录 -->
+    <view wx:else class='mysale'>
+      <view  style='display:{{havesale}}' class='item' wx:for="{{saleList}}" wx:key="index">
+        <view class='useravatar'>
+          <image class='avatarimg' src='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2380500185,1578054607&fm=26&gp=0.jpg'></image>
+        </view>
+        <view class='saleInfo'>
+          <view class='usernickname'>
+            {{item.customernickname}}
+          </view>
+          <view class='couponKind'>
+            {{item.consumptionamount}}减{{item.preferentialamount}}
+          </view>
+          <view class='userwxdate'>
+            消费日期：{{item.consumetime}}
+          </view>
+        </view>
+      </view>
+      <view class='nosale' style='display:{{nonesale}}'>
+        <image class='nosaleIcon' src='../../images/nosale.png'></image>
+        <text>亲，您暂时没有销售记录哦</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 二维码扫描成功确认弹窗 -->
+<view class='chooseuser' style='display:{{scan_confirm}};'>
+  <view class='chooseframe'>
+    <view class='title'>扫描成功！</view>
+    <button class='userShop' bindtap='cancel_ercodeRequest'>取消</button>
+    <button class='userUser'  bindtap='ercode_request'>确认验证</button>
+  </view>
+</view>
+<my-bottom bList="{{bottomlist}}" bind:confirm_test = "confirm_test"> </my-bottom>

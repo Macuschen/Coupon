@@ -1,0 +1,16 @@
+/**app.wxss**/
+button{
+  margin: 0;
+  padding: 0;
+}
+button::after{
+border:none;
+}
+input{
+outline:none;
+border:none;
+list-style: none;
+}
+text{
+  display: inline-block;
+}

@@ -1,0 +1,11 @@
+<!--components/bottom/bottom.wxml-->
+<view class='wrap'>
+  <view class='item' bindtap='Togo' data-name="{{item}}" wx:for="{{bList}}" wx:key="index" >
+    <view class='pic'>
+      <image class='image' src='{{item.selected === true?item.picactive:item.pic}}'></image>
+    </view>
+    <view class="{{item.selected === true?'selected':''}}" >
+      {{item.text}}
+    </view>
+  </view>
+</view>

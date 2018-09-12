@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/menu/menu",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "drak",
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "满立减",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/shop/shop",
+      "text": "适用商家"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的"
+    }
+    ]
+  }
+}

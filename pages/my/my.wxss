@@ -1,0 +1,294 @@
+/* pages/my/my.wxss */
+page{
+    height: 100%;
+}
+.content{
+  width: 750rpx;
+  height: 100%;
+}
+.content .header{
+  width: 750rpx;
+  height: 300rpx;
+  padding-top: 40rpx;
+  background-image: url('https://zmm.mynatapp.cc/static/images/myBg.png');
+  background-size: 750rpx 340rpx;
+}
+.content .header.shop{
+  width: 750rpx;
+  height: 300rpx;
+  padding-top: 43rpx;
+  background-image: url('https://zmm.mynatapp.cc/static/images/shopBg.png');
+  background-size: 750rpx 343rpx;
+}
+.content .header .avtarWrap{
+  width: 104rpx;
+  height: 104rpx;
+  border: 3rpx solid #FFFFFF;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+.content .header.shop .avtarWrap{
+  border-radius: 10rpx;
+}
+.content .header .avtarWrap .avatar{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+}
+.content .header.shop .avtarWrap .avatar{
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 10rpx;
+}
+.content .header .nickName{
+  font-size: 30rpx;
+  color: #FFFFFF;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.content .header .wxNum{
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-top: 19rpx;
+  text-align: center;
+}
+.content .title{
+  height: 113rpx;
+  line-height: 113rpx;
+  font-size: 34rpx;
+  color: #303133;
+  font-weight: bold;
+  text-indent: 35rpx;
+}
+.content .title.shop{
+  border-bottom:1rpx solid #EEEEEE;
+}
+.nologin{
+  display: none;
+}
+/* 选项卡的样式 */
+.swiper-tab{
+    width: 678rpx;
+    height: 93rpx;
+    line-height: 93rpx;
+    margin: 0 auto;
+    border-top: 1rpx solid #EEEEEE;
+    border-bottom: 1rpx solid #EEEEEE;
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    color: #9998A4;
+    font-size: 28rpx;
+}
+.swiper-tab-item{
+  display: inline-block;
+  width: 25%; 
+  color:#9998A4;
+}
+.active{
+  position: relative;
+  color: #FD2B52;
+}
+.active::after{
+  content: '';
+  position: absolute;
+  height: 6rpx;
+  left: 35rpx;
+  right: 35rpx;
+  bottom: 0;
+  background-color: #fd2b52;
+  border-radius: 2rpx;
+}
+swiper{
+  width: 750rpx;
+  height: 599rpx;
+  padding-bottom: 108rpx;
+  background-color: #F8F8F8;
+}
+.swiperItem{
+    width:100%;
+    height: 599rpx;
+    background-color: #F8F8F8;
+    padding-top: 9rpx;
+    font-size: 22rpx;
+    overflow-y: auto;
+    padding-bottom: 98rpx;
+}
+.stateIcon{
+  width: 128rpx;
+  height: 116rpx;
+}
+.sigleCoupon{
+  width: 658rpx;
+  height: 182rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  display: flex;
+}
+.sigleCoupon .left{
+  width: 198rpx;
+  height: 182rpx;
+  background: url('https://zmm.mynatapp.cc/static/images/couponNouseL.png');
+  background-size: 198rpx 182rpx;
+  display: inline-block;
+}
+.sigleCoupon .left .valuePrice{
+  font-size: 60rpx;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 30rpx;
+}
+.sigleCoupon .left .limit{
+  color: #FFFFFF;
+  font-size: 26rpx;
+  text-align: center;
+}
+.sigleCoupon .right{
+  position: relative;
+  width: 460rpx;
+  height: 176rpx;
+  display: inline-block;
+  padding-left: 60rpx;
+  padding-top: 6rpx;
+  background: url('https://zmm.mynatapp.cc/static/images/couponRight.png');
+  background-size: 460rpx 176rpx;
+  color: #61616B;
+}
+.sigleCoupon .right .intro{
+  height: 89rpx;
+  line-height: 89rpx;
+  letter-spacing: 7rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.limitDate{
+  margin-top: 10rpx;
+}
+.overdueIcon,.usedIcon{
+  position: absolute;
+  z-index: 10;
+  top: 20rpx;
+  right: 20rpx;
+  width: 128rpx;
+  height: 116rpx;
+}
+.nocoupon{
+  width: 750rpx;
+  border-top: 1rpx solid #EEEEEE;
+}
+.nocoupon text,.nosale text{
+  width: 750rpx;
+  font-size: 26rpx;
+  color:#9998A4;
+  text-align: center;
+  margin-top: 30rpx;
+
+}
+.nocouponIcon{
+  display: block;
+  width: 216rpx;
+  height: 167rpx;
+  margin: 0 auto;
+  margin-top: 114rpx;
+}
+
+/* 商家样式 */
+.mysale{
+  width: 750rpx;
+  padding-top: 20rpx;
+  padding-bottom: 98rpx;
+}
+.mysale .item{
+  width: 678rpx;
+  height: 172rpx;
+  display: flex;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+.mysale .item:last-child{
+  border: none;
+}
+.mysale .item .useravatar{
+  display: inline-block;
+  width: 178rpx;
+  height: 171rpx;
+}
+.mysale .item .useravatar .avatarimg{
+  width: 104rpx;
+  height: 104rpx;
+  border: 3rpx  solid #FFF001;
+  border-radius: 50%;
+  margin-top: 31rpx;
+  margin-left: 20rpx;
+}
+.mysale .item .saleInfo{
+  display: inline-block;
+  width: 500rpx;
+  font-size: 24rpx;
+  color: #61616C;
+}
+.mysale .item .saleInfo .usernickname{
+  color: #303133;
+  font-size: 28rpx;
+  margin-top: 26rpx;
+}
+.couponKind{
+  color: #FD2B52;
+  font-size: 30rpx;
+}
+.userwxdate{
+  margin-top: 4rpx;
+}
+.nosale{
+  width: 750rpx;
+}
+.nosale .nosaleIcon{
+  display: block;
+  width: 219rpx;
+  height: 173rpx;
+  margin: 0 auto;
+  margin-top: 155rpx;
+}
+
+/* 用户身份选择弹窗 */
+.chooseuser,.shoplogin{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+}
+.chooseuser .chooseframe{
+  width: 500rpx;
+  height: 300rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  font-size:32rpx; 
+}
+.chooseuser .chooseframe .tip{
+  font-size: 24rpx;
+  color: #fd2b52;
+}
+.chooseuser .chooseframe .title{
+  font-size: 42rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+.chooseuser .chooseframe  .userUser,.chooseuser .chooseframe .userShop{
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  color: #FFFFFF;
+  background-color: #fd2b52;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 50rpx;
+}

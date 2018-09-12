@@ -1,0 +1,289 @@
+/* 首页的样式 */
+.wrap{
+  width: 750rpx;
+  background-color: #FFF;
+}
+.wrap .coupon{
+  width: 750rpx;
+  height: 695rpx;
+  padding-top: 29rpx;
+  /* background-color:green; */
+}
+.wrap .coupon .frame{
+  width: 574rpx;
+  height: 284rpx;
+  padding-top: 212rpx;
+  margin: 0 auto;
+  background:url('https://gzpost.gcgn11525.com/dcoupon-v1/static/images/frameBg.png');
+  background-size: 574rpx 496rpx;
+}
+.frame .countdown .countdownIcon{
+  width:  28rpx;
+  height: 26rpx;
+  margin-right: 9rpx;
+  vertical-align: baseline;
+}
+.frame .countdown .countdownTime{
+  color: #FFCC00;
+  margin-left: 11rpx;
+}
+.frame .countdown .countdownIcon,.frame .countdown .countdownText,.frame .countdown .countdownTime{
+  display: inline-block;
+}
+.frame .couponKind{
+  width: 425rpx;
+  height: 240rpx;
+  margin: 0 auto;
+  font-size: 22rpx;
+  color: #FFF3F3;
+  background:url('https://zmm.mynatapp.cc/static/images/couponBg.png') ;
+  background-size: 425rpx 240rpx;
+
+}
+.frame .couponKind .kindText{
+  width: 100%;
+  padding-top: 60rpx;
+  text-align: center;
+}
+.frame .couponKind .kindText .text{
+  color: #FFCC00;
+  font-size: 34rpx;
+
+}
+.frame .couponKind .kindText .number{
+  color: #FFFFFF;
+  font-size: 58rpx;
+  
+}
+.frame .couponKind .periodOfValidity{
+  margin-top: 10rpx;
+  margin-left: 40rpx;
+  
+}
+.frame .couponKind  .limit{
+  margin-left: 40rpx;
+}
+.residue{
+  font-size: 28rpx;
+  color: #303133; 
+  text-align: center;
+  margin-top: 52rpx;
+
+}
+.residue .residueNum{
+  color: #FD2B52;
+}
+/* 领取优惠券 */
+.getNow{
+  display: block;
+  width: 402rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background:url('https://zmm.mynatapp.cc/static/images/getNowBtn.png');
+  background-size: 402rpx 80rpx;
+  color: #FFF;
+  margin: 0 auto;
+  margin-top: 45rpx;
+  font-size: 34rpx;
+  border-radius: 35rpx;
+  text-align: center;
+}
+/* 商家不能领取优惠券 */
+.getNow.false{
+  background-image: url('https://zmm.mynatapp.cc/static/images/getOverBg.png');
+}
+/* 优惠券已领完已领过已结束 */
+.getNow.none{
+  background-image:url('https://zmm.mynatapp.cc/static/images/getOverBg.png');
+  background-size: 402rpx 80rpx;
+}
+/* 规则 */
+.rule{
+  width: 750rpx;
+}
+.rule .ruleHeader{
+  width: 750rpx;
+  text-align: center;
+  color:#FFCC00;
+  font-size: 34rpx; 
+  margin-top: 100rpx;
+}
+.rule .ruleHeader .ruleicon{
+  width: 34rpx;
+  height: 26rpx;
+}
+.rule .ruleHeader .ruleicon.l{
+  margin-right: 30rpx;
+}
+.rule .ruleHeader .ruleicon.r{
+  margin-left: 30rpx;
+}
+.rule .ruleContent{
+  width:620rpx;
+  margin: 0 auto;
+  margin-top: 50rpx; 
+  font-size: 30rpx;
+  color: #61616C;
+  line-height: 52rpx;
+  padding-bottom: 150rpx; 
+}
+.tc{
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .4);
+}
+.tc .tcbox{
+  width: 550rpx;
+  height: 400rpx;
+  padding-left: 50rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 0 auto;
+  margin-top: 380rpx;
+}
+.tc .tcbox .tctext{
+  color: #303133;
+  font-weight: bold;
+  margin-top: 74rpx;
+}
+.tc .tcbox .tctext.message{
+  color: #303133;
+  font-weight: bold;
+  margin-top: 117rpx;
+  width: 100%;
+  text-align: center;
+  margin-left: -20rpx;
+}
+.tc .tcbox input{
+  width: 468rpx;
+  height: 70rpx;
+  border: 1rpx solid #cacaca;
+  border-radius: 36rpx;
+  margin-top: 30rpx;
+  padding-left: 32rpx;
+}
+.phcolor{
+  color:#9998A4;
+  font-size:28rpx;
+}
+.tc .tcbox .no,.tc .tcbox .yes{
+  display: inline-block;
+  margin-top: 60rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #9797a2;
+  text-align: center;
+  color: #9998A4;
+  font-size: 30rpx;
+  border-radius: 35rpx;
+}
+.tc .tcbox .yes{
+  background-color:#fd2b52;
+  border: none;
+  color: #FFFFFF; 
+  margin-left: 140rpx;
+  width: 182rpx;
+  height: 62rpx;
+}
+/* 用户身份选择弹窗 */
+.chooseuser,.shoplogin{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+}
+.chooseuser .chooseframe{
+  width: 500rpx;
+  height: 300rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  font-size:32rpx; 
+  border-radius: 10rpx;
+}
+.chooseuser .chooseframe .tip{
+  font-size: 24rpx;
+  color: #fd2b52;
+}
+.chooseuser .chooseframe .title{
+  font-size: 42rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+}
+.chooseuser .chooseframe  .userUser,.chooseuser .chooseframe .userShop{
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  color: #FFFFFF;
+  background-color: #fd2b52;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 50rpx;
+}
+/* 商家信息填写弹窗 */
+.shoplogin .loginframe{
+  width: 500rpx;
+  height: 500rpx;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  background: #FFFFFF;
+  font-size: 32rpx;
+  color: #303133;
+  padding: 40rpx;
+  border-radius: 10rpx;
+}
+.shoplogin .loginframe .tip{
+  color:  #fd2b52;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.shoplogin .loginframe input{
+  border: 1rpx solid #EEEEEE;
+  padding-left: 30rpx;
+  height: 64rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 35rpx;
+  font-size: 28rpx;
+}
+.shoplogin .loginframe .wxtip{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  color: #333333;
+}
+.shoplogin .loginframe .cancel, .shoplogin .loginframe  .ensure{
+  width: 180rpx;
+  height: 60rpx;
+  display: inline-block;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+  margin-top: 35rpx;
+  color: #FFFFFF;
+  background-color: #fd2b52;
+  font-size: 24rpx;
+}
+.shoplogin .loginframe .cancel{
+  border: 1rpx solid #9797a2;
+  color: #9998A4;
+  background-color: #FFFFFF;
+
+}
+.shoplogin .loginframe  .ensure{
+  margin-left: 135rpx;
+}
+/* 输入框提示样式 */
+.pstyle{
+  font-size: 24rpx;
+}

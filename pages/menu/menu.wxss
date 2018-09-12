@@ -1,0 +1,57 @@
+/* pages/menu/menu.wxss */
+.wrap{
+  width: 612rpx;
+  height: 685rpx;
+  border: 2rpx dashed #61616C;
+  margin: 0 auto;
+  margin-top: 59rpx;
+  position: relative;
+}
+.wrap .kindcoupon{
+  color: #FD2B52;
+  font-size: 40rpx;
+  text-align: center;
+  margin-top: 52rpx;
+}
+.wrap .date{
+  color: #a0a0a6;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 38rpx;
+}
+.qrcodeBox{
+  height: 450rpx;
+  width: 450rpx;
+  margin: 0 auto;
+  margin-top: 13rpx;
+}
+.qrcodeBox>canvas{
+  width: 450rpx;
+  height: 450rpx;
+  margin: 0 auto;
+  border: 5rpx solid #ffcc00;
+}
+.stateKind{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -40rpx;
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 36rpx;
+  background-color: #fd2b52;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 30rpx;
+}
+.tip{
+  width: 750rpx;
+  font-size: 30rpx;
+  height: 40rpx;
+  color:#61616C;
+  text-align: center; 
+  padding-top: 20rpx;
+  /* background-color: red; */
+}

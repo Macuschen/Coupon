@@ -1,0 +1,76 @@
+<!-- 首页 蔡海燕 2018/8/24 -->
+<!-- 用户选择身份弹窗 -->
+<view class='chooseuser' style='display:{{chooseuserTc}};'>
+  <view class='chooseframe'>
+    <text class='tip'>提示：身份一旦选择，无法变更，请谨慎选择！</text>
+    <view class='title'>请选择您的身份</view>
+    <button class='userShop' bindtap='Toshop'>商家</button>
+    <button class='userUser' open-type='getUserInfo' bindgetuserinfo='Touser'>用户</button>
+  </view>
+</view>
+<!-- 商家登录 -->
+<view class='shoplogin' style='display:{{shopInfoinput}}'> 
+  <view class='loginframe'>
+    <view class='tip'>*请输入入驻时提供的信息</view>
+    <view>微信号:</view>
+    <input placeholder='请输入您的微信号' bindblur='wxcomplete' value='{{wxValue}}' placeholder-class='pstyle'></input>
+    <view>手机号:</view>
+    <input placeholder='请输入您的手机号' bindblur='phonecomplete' value='{{shopPhoneValue}}' placeholder-class='pstyle'></input>
+    <view class='wxtip'>温馨提示：点击确定后将获取您的信息</view>
+    <button class='cancel' bindtap='cancelInfo'>取消</button>
+    <button class='ensure' open-type='getUserInfo' bindgetuserinfo='getShopInfo'>确定</button>
+  </view>
+</view>
+<!-- 优惠券首页展示 -->
+<view class='wrap'>
+  <view class='coupon'>
+    <view class='frame'>
+      <!-- 优惠券里面的内容 -->
+      <view class='couponKind'>
+        <view class='kindText'>
+          <text class='text'>满</text>
+          <text class='number'>{{consumptionamount}}</text>
+          <text class='text'>减</text>
+          <text class='number'>{{preferentialamount}}</text>
+        </view>
+        <view class='periodOfValidity'>有效期：{{startTime}}至{{endTime}}</view>
+        <view class='limit'>每人限领一张</view>
+      </view>
+    </view>
+    <view class='residue'>
+        已有<text class='residueNum'> {{couponReceivedCount}} </text>人领取
+    </view>
+    <view class="getNow {{getstate == '立即领取'?'':'none'}}" bindtap="{{getstate == '立即领取'?'getCouponNow':'none'}}">{{getstate}}</view>
+  </view>
+  <view class='rule'>
+    <view class='ruleHeader'>
+      <image class='ruleicon l' src='../../images/ruleIconLeft.png'></image>
+      <text class='ruleText'>活动规则</text>
+      <image class='ruleicon r' src='../../images/ruleIconRight.png'></image>
+    </view>
+    <view class='ruleContent'>
+      <view wx:for="{{ruleArr}}" wx:key="index">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 用户输入手机号的弹窗 -->
+<view class="tc" style='display:{{tcshow}};'>
+  <view class='tcbox'>
+    <text class='tctext'>请输入手机号领取</text>
+    <input placeholder-class="phcolor" type="number" maxlength='11'  bindblur='watchphone' placeholder='请输入手机号'></input>
+    <button  class='no'  bindtap='cancel'>取消</button>
+    <button  class='yes' open-type='getUserInfo' bindgetuserinfo='sure'>确定</button>
+  </view>
+</view>
+<!-- 二维码扫描成功确认弹窗 -->
+<view class='chooseuser' style='display:{{scan_confirm}};'>
+  <view class='chooseframe'>
+    <view class='title'>扫描成功！</view>
+    <button class='userShop' bindtap='cancel_ercodeRequest'>取消</button>
+    <button class='userUser'  bindtap='ercode_request'>确认验证</button>
+  </view>
+</view>
+
+<my-bottom bList="{{bottomlist}}"  bind:confirm_test = "confirm_test"></my-bottom>

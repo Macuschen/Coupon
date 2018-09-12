@@ -1,0 +1,13 @@
+<!--pages/menu/menu.wxml-->
+<text class='tip'>出示该二维码到适用商家进行扫码消费</text>
+<view class='wrap container'>
+  <view class='kindcoupon'>满100减30</view>
+  <view class="erweima">
+    <view class='qrcodeBox'>
+      <canvas canvas-id='qrcode'></canvas>
+    </view>
+  </view>
+  <!-- <view class='date'>有效期：2018.06.01-2018.06.21</view> -->
+  <!-- <view class='stateKind'>未使用</view> -->
+</view>
+<my-bottom bList="{{bottomlist}}"> </my-bottom>

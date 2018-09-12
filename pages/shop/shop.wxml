@@ -1,0 +1,22 @@
+<!--pages/shop/shop.wxml-->
+<view class='shopList'>
+  <view class='single' wx:for="{{shopList}}"  wx:key="index">
+    <view class='wrap'>
+      <view class='left'>
+        <image src='{{item.storeimg}}'></image>
+      </view>
+      <view class='right'>
+        <view class='shopName'>{{item.storename}}</view>
+        <view class='phone'>
+          <image class='phoneIcon' src='https://gzpost.gcgn11525.com/dcoupon-v1/static/images/phoneIcon.png'></image>
+          <text>{{item.inputphone}}</text>
+        </view>
+        <view class='address'>
+          <image class='addressIcon' lazy-load="true" src='https://gzpost.gcgn11525.com/dcoupon-v1/static/images/addressIcon.png'></image>
+          <text>{{item.storeaddr}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<my-bottom bList="{{bottomlist}}"> </my-bottom>

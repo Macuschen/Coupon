@@ -1,0 +1,68 @@
+/* pages/shop/shop.wxss */
+/* page{
+  background-color: black;
+} */
+.shopList{
+  width: 750rpx;
+  padding-bottom: 98rpx;
+}
+.shopList .single{
+  width: 750rpx;
+  height: 190rpx;
+  padding-top: 30rpx;
+  position: relative;
+}
+.shopList .single::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 36rpx;
+  right: 36rpx;
+  height: 1rpx;
+  background-color:#EEEEEE;
+}
+.shopList .single .wrap{
+  width: 658rpx;
+  height: 160rpx;
+  margin: 0 auto;
+}
+.shopList .single .wrap .left,.shopList .single .wrap .right{
+  display: inline-block;
+}
+.wrap{
+  font-size: 28rpx;
+  color: #61616C;
+}
+.wrap .right{
+  height: 160rpx;
+  margin-left: 49rpx;
+  vertical-align: top;
+}
+.wrap .right .shopName{
+  height: 59rpx;
+  line-height: 59rpx;
+  color:#303133;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.wrap .right .phone{
+  margin-top: 15rpx;
+}
+.wrap .right .address{
+  margin-top: 15rpx;
+}
+.left image{
+  width: 180rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+.phoneIcon{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+.addressIcon{
+  width: 20rpx;
+  height: 26rpx;
+  margin-right: 21rpx;
+}
